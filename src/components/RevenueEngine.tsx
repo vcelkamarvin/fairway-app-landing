@@ -91,7 +91,7 @@ function OutcomeCard({ icon, title, description, delay }: { icon: React.ReactNod
       className="bg-warm-white p-6 rounded-2xl border border-border-green shadow-sm hover:border-primary-green transition-colors group"
     >
       <div className="w-10 h-10 bg-primary-green text-warm-white rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-        {React.cloneElement(icon as React.ReactElement, { className: 'w-5 h-5' })}
+        {React.cloneElement(icon as any, { className: 'w-5 h-5' })}
       </div>
       <h3 className="font-bold text-dark-green text-lg mb-2">{title}</h3>
       <p className="text-text-muted text-sm leading-relaxed">{description}</p>
@@ -103,7 +103,7 @@ function AnalyticsRow({ icon, label, value }: { icon: React.ReactNode, label: st
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-3 text-text-muted">
-        {React.cloneElement(icon as React.ReactElement, { className: 'w-5 h-5' })}
+        {React.cloneElement(icon as any, { className: 'w-5 h-5' })}
         <span className="font-medium">{label}</span>
       </div>
       <span className="font-bold text-dark-green">{value}</span>

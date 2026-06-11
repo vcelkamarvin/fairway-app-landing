@@ -205,7 +205,7 @@ function NavItem({ icon, label, active = false }: { icon: React.ReactNode, label
   return (
     <div className={`flex flex-col items-center justify-center w-12 ${active ? 'text-primary-green' : 'text-gray-400'}`}>
       <div className="w-6 h-6 mb-1">
-        {React.cloneElement(icon as React.ReactElement, { className: 'w-full h-full' })}
+        {React.cloneElement(icon as any, { className: 'w-full h-full' })}
       </div>
       <span className="text-[10px] font-medium">{label}</span>
     </div>

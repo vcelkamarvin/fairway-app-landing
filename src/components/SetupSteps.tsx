@@ -59,7 +59,7 @@ function StepCard({ number, icon, title, description, delay }: { number: string,
         <div className="absolute -top-3 -right-3 w-6 h-6 bg-accent-gold text-white text-xs font-bold rounded-full flex items-center justify-center">
           {number}
         </div>
-        {React.cloneElement(icon as React.ReactElement, { className: 'w-8 h-8' })}
+        {React.cloneElement(icon as any, { className: 'w-8 h-8' })}
       </div>
       
       {/* Abstract Visual Placeholder */}

@@ -84,7 +84,7 @@ function FeatureCard({ title, description, icon, delay }: { title: string, descr
       className="bg-white p-6 rounded-2xl shadow-sm border border-border-green/50 hover:shadow-md hover:border-border-green transition-all"
     >
       <div className="w-12 h-12 bg-cream-surface rounded-xl flex items-center justify-center text-primary-green mb-6">
-        {React.cloneElement(icon as React.ReactElement, { className: 'w-6 h-6' })}
+        {React.cloneElement(icon as any, { className: 'w-6 h-6' })}
       </div>
       <h3 className="text-lg font-bold text-dark-green mb-3">{title}</h3>
       <p className="text-sm text-text-muted leading-relaxed">
