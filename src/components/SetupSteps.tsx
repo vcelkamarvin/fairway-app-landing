@@ -1,43 +1,38 @@
 import React from 'react';
-import { DownloadCloud, Settings2, Send } from 'lucide-react';
 import * as motion from 'framer-motion/client';
 
 export function SetupSteps() {
   return (
-    <section className="py-24 bg-cream-surface">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-6">
-            3 easy steps to launch your club app
+    <section className="py-32 bg-warm-white">
+      <div className="max-w-[90rem] mx-auto px-6 sm:px-12 lg:px-16">
+        
+        <div className="max-w-4xl mx-auto text-center mb-24">
+          <h2 className="text-5xl md:text-6xl font-serif font-medium text-dark-green mb-8">
+            Tradition on the tee.<br/>
+            <span className="italic text-text-muted">Technology in the background.</span>
           </h2>
-          <p className="text-lg text-text-muted">
-            No internal developer. No new booking system. No long implementation.
+          <p className="text-lg font-sans text-text-muted max-w-2xl mx-auto">
+            The purpose here is continuity. Play is approached as something sustained over time, not refreshed for effect. Our platform respects your existing systems.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-          {/* Connecting line for desktop */}
-          <div className="hidden md:block absolute top-24 left-1/6 right-1/6 h-px bg-border-green z-0 border-dashed border-b"></div>
-
-          <StepCard 
-            number="1"
-            icon={<DownloadCloud />}
-            title="Import your club identity"
-            description="Fairway App imports your logo, colors, course images, membership tiers, and basic club information."
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+          <Step 
+            number="I."
+            title="Import Identity"
+            desc="We import your crest, colors, course photography, and membership registry with total fidelity."
             delay={0.1}
           />
-          <StepCard 
-            number="2"
-            icon={<Settings2 />}
-            title="Configure your member experience"
-            description="Choose rewards, wallet rules, birthday offers, push campaigns, and available member benefits."
+          <Step 
+            number="II."
+            title="Configure Rituals"
+            desc="Set the cadence of communication. Define the parameters of your club wallet and member privileges."
             delay={0.3}
           />
-          <StepCard 
-            number="3"
-            icon={<Send />}
-            title="Start sending offers"
-            description="Launch push campaigns for tee times, lessons, tournaments, F&B, and pro shop promotions."
+          <Step 
+            number="III."
+            title="Invite Members"
+            desc="A discreet, branded invitation is extended to your membership. No friction. Immediate utility."
             delay={0.5}
           />
         </div>
@@ -46,30 +41,19 @@ export function SetupSteps() {
   );
 }
 
-function StepCard({ number, icon, title, description, delay }: { number: string, icon: React.ReactNode, title: string, description: string, delay: number }) {
+function Step({ number, title, desc, delay }: { number: string, title: string, desc: string, delay: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay }}
-      className="relative z-10 flex flex-col items-center text-center"
+      viewport={{ once: true }}
+      transition={{ duration: 1, delay }}
+      className="flex flex-col border-t border-dark-green/20 pt-8"
     >
-      <div className="w-16 h-16 bg-warm-white rounded-2xl shadow-md border border-border-green flex items-center justify-center text-primary-green mb-8 relative">
-        <div className="absolute -top-3 -right-3 w-6 h-6 bg-accent-gold text-white text-xs font-bold rounded-full flex items-center justify-center">
-          {number}
-        </div>
-        {React.cloneElement(icon as any, { className: 'w-8 h-8' })}
-      </div>
-      
-      {/* Abstract Visual Placeholder */}
-      <div className="w-full h-40 bg-white rounded-xl shadow-sm border border-border-green mb-8 flex items-center justify-center overflow-hidden">
-        <div className="w-full h-full opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==')]"></div>
-      </div>
-
-      <h3 className="text-xl font-bold text-dark-green mb-4">{title}</h3>
-      <p className="text-text-muted leading-relaxed">
-        {description}
+      <span className="font-serif italic text-3xl text-dark-green mb-6">{number}</span>
+      <h3 className="text-xl font-serif font-medium text-dark-green mb-4">{title}</h3>
+      <p className="text-sm font-sans text-text-muted leading-relaxed">
+        {desc}
       </p>
     </motion.div>
   );

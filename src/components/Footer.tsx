@@ -3,70 +3,50 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-[#0A1610] text-warm-white py-16 border-t border-border-green">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="font-serif font-bold text-2xl tracking-tight text-warm-white flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-warm-white text-dark-green rounded flex items-center justify-center font-sans font-bold">F</div>
-              FAIRWAY APP
+    <footer className="bg-warm-white border-t border-border-green py-16">
+      <div className="max-w-[90rem] mx-auto px-6 sm:px-12 lg:px-16">
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="col-span-1 md:col-span-2">
+            <Link href="/" className="font-serif font-bold text-3xl tracking-wide text-dark-green uppercase block mb-6">
+              FAIRWAY
             </Link>
-            <p className="text-text-muted text-sm leading-relaxed">
-              The 24/7 Member Retention Engine for Golf Clubs. Sell more rounds, lessons & memberships.
+            <p className="text-sm font-sans text-text-muted max-w-sm">
+              The purpose here is continuity. Software for the world's finest private member clubs.
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4 text-accent-gold">Product</h4>
-            <ul className="space-y-3">
-              {['Features', 'Pricing', 'Case Studies'].map((item) => (
-                <li key={item}>
-                  <Link href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-text-muted hover:text-warm-white transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="text-xs font-sans tracking-widest uppercase text-dark-green mb-6">Platform</h4>
+            <ul className="space-y-4">
+              <li><Link href="#" className="text-sm font-sans text-text-muted hover:text-dark-green transition-colors">Tournaments</Link></li>
+              <li><Link href="#" className="text-sm font-sans text-text-muted hover:text-dark-green transition-colors">Lessons</Link></li>
+              <li><Link href="#" className="text-sm font-sans text-text-muted hover:text-dark-green transition-colors">Wallet</Link></li>
+              <li><Link href="#" className="text-sm font-sans text-text-muted hover:text-dark-green transition-colors">Membership</Link></li>
             </ul>
           </div>
-
+          
           <div>
-            <h4 className="font-semibold mb-4 text-accent-gold">Company</h4>
-            <ul className="space-y-3">
-              {['About', 'Contact', 'For Clubs'].map((item) => (
-                <li key={item}>
-                  <Link href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-text-muted hover:text-warm-white transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4 text-accent-gold">Legal</h4>
-            <ul className="space-y-3">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-                <li key={item}>
-                  <Link href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-text-muted hover:text-warm-white transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="text-xs font-sans tracking-widest uppercase text-dark-green mb-6">Society</h4>
+            <ul className="space-y-4">
+              <li><Link href="#" className="text-sm font-sans text-text-muted hover:text-dark-green transition-colors">About Us</Link></li>
+              <li><Link href="#" className="text-sm font-sans text-text-muted hover:text-dark-green transition-colors">Journal</Link></li>
+              <li><Link href="#" className="text-sm font-sans text-text-muted hover:text-dark-green transition-colors">Contact</Link></li>
+              <li><Link href="#" className="text-sm font-sans text-text-muted hover:text-dark-green transition-colors">Privacy</Link></li>
             </ul>
           </div>
         </div>
-        
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-text-muted">
-            &copy; {new Date().getFullYear()} Fairway App. All rights reserved.
+
+        <div className="flex flex-col md:flex-row justify-between items-center border-t border-dark-green/10 pt-8">
+          <p className="text-xs font-sans text-text-muted mb-4 md:mb-0">
+            &copy; {new Date().getFullYear()} Fairway Technology. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            {/* Social placeholders */}
-            <div className="w-5 h-5 bg-text-muted rounded-full opacity-50 hover:opacity-100 transition-opacity"></div>
-            <div className="w-5 h-5 bg-text-muted rounded-full opacity-50 hover:opacity-100 transition-opacity"></div>
-            <div className="w-5 h-5 bg-text-muted rounded-full opacity-50 hover:opacity-100 transition-opacity"></div>
+          <div className="flex space-x-6">
+            <Link href="#" className="text-xs font-sans text-text-muted hover:text-dark-green transition-colors">Terms</Link>
+            <Link href="#" className="text-xs font-sans text-text-muted hover:text-dark-green transition-colors">Privacy Policy</Link>
           </div>
         </div>
+
       </div>
     </footer>
   );
